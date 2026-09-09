@@ -1,0 +1,262 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'NooriGothicR';
+  src: local('210 누리고딕 R'),
+       local('210 누리고딕R'),
+       local('210 누리고딕'),
+       local('210 Noorigothic R'),
+       local('210 Noorigothic-R'),
+       local('210 Noorigothic'),
+       local('210 NooriGothic R'),
+       local('210 NooriGothic'),
+       local('누리고딕R'),
+       local('누리고딕 R'),
+       local('누리고딕'),
+       local('NooriGothicR'),
+       local('NooriGothic-Regular'),
+       local('NooriGothic-R'),
+       local('NooriGothic'),
+       local('Noorigothic R'),
+       local('Noorigothic');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'NooriGothicB';
+  src: local('210 누리고딕 B'),
+       local('210 누리고딕B'),
+       local('210 누리고딕'),
+       local('210 Noorigothic B'),
+       local('210 Noorigothic-B'),
+       local('210 NooriGothic B'),
+       local('누리고딕B'),
+       local('누리고딕 B'),
+       local('NooriGothicB'),
+       local('NooriGothic-Bold'),
+       local('Noorigothic B');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PyeongChangPeace';
+  src: url('/fonts/PyeongChangPeace-Bold.woff2') format('woff2'),
+       url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PyeongChangPeace-Bold';
+  src: url('/fonts/PyeongChangPeace-Bold.woff2') format('woff2'),
+       url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'NooriGothicR', '210 누리고딕 R', '210 누리고딕', '누리고딕R', '누리고딕', 'NooriGothic', 'Pretendard', 'Noto Sans KR', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'NooriGothicR', '210 누리고딕 R', '210 누리고딕', '누리고딕R', '누리고딕', 'NooriGothic', 'Pretendard', 'Noto Sans KR', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'NooriGothicR', '210 누리고딕 R', '210 누리고딕', '누리고딕R', '누리고딕', 'NooriGothic', 'Pretendard', 'Noto Sans KR', sans-serif;
+  --font-serif-magic: 'PyeongChangPeace-Bold', 'PyeongChangPeace', 'Cinzel', 'Noto Serif KR', serif;
+  --font-title: 'PyeongChangPeace-Bold', 'PyeongChangPeace', sans-serif;
+}
+
+.font-mono {
+  font-family: 'NooriGothicR', '210 누리고딕 R', '210 누리고딕', '누리고딕R', '누리고딕', 'NooriGothic', 'Pretendard', 'Noto Sans KR', sans-serif !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.font-pyeongchang,
+.font-pyeongchang span,
+.font-pyeongchang div,
+.font-title {
+  font-family: 'PyeongChangPeace-Bold', 'PyeongChangPeace', sans-serif !important;
+}
+
+@layer base {
+  *,
+  html,
+  body {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  html {
+    font-size: 18px; /* 기본 스케일을 16px에서 18px로 전체 확대 유지 */
+  }
+
+  body {
+    background-color: #0f172a;
+    color: #f1f5f9;
+    font-family: 'NooriGothicR', '210 누리고딕 R', '210 누리고딕', '누리고딕R', '누리고딕', 'NooriGothic', 'Pretendard', 'Noto Sans KR', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
+
+  p, span, button, a, div, li, label, input, textarea {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    font-family: 'NooriGothicR', '210 누리고딕 R', '210 누리고딕', '누리고딕R', '누리고딕', 'NooriGothic', 'Pretendard', 'Noto Sans KR', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* 제목 폰트는 평화체(PyeongChangPeace) 유지 */
+  h1, h2, h3, .font-serif-magic {
+    font-family: 'PyeongChangPeace-Bold', 'PyeongChangPeace', 'Cinzel', 'Noto Serif KR', serif;
+  }
+}
+
+/* Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes cloudDrift1 {
+  0% { transform: translateX(-10%); }
+  50% { transform: translateX(8%); }
+  100% { transform: translateX(-10%); }
+}
+
+@keyframes cloudDrift2 {
+  0% { transform: translateX(6%); }
+  50% { transform: translateX(-8%); }
+  100% { transform: translateX(6%); }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes moonPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 25px rgba(251, 191, 36, 0.25));
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(251, 191, 36, 0.4));
+  }
+}
+
+@keyframes cardFlipIn {
+  0% {
+    opacity: 0;
+    transform: perspective(1000px) rotateY(90deg) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(1000px) rotateY(0deg) scale(1);
+  }
+}
+
+@keyframes cardShimmer {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(200%) rotate(25deg); }
+}
+
+.animate-card-flip {
+  animation: cardFlipIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-shimmer {
+  animation: cardShimmer 3s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-cloud-1 {
+  animation: cloudDrift1 45s ease-in-out infinite;
+}
+
+.animate-cloud-2 {
+  animation: cloudDrift2 55s ease-in-out infinite;
+}
+
+.animate-moon-pulse {
+  animation: moonPulse 7s ease-in-out infinite;
+}
+
+.animate-twinkle-1 {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.animate-twinkle-2 {
+  animation: twinkle 4.5s ease-in-out infinite 1.5s;
+}
+
+.animate-twinkle-3 {
+  animation: twinkle 6s ease-in-out infinite 3s;
+}
+
+/* Refined Dark Cards (Anti-Slop: subtle border, soft inner glow, restrained gold) */
+.night-card {
+  background: #0d1222;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.night-card-gold {
+  background: #0e1424;
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+}
+
+.gold-badge {
+  background: rgba(251, 191, 36, 0.08);
+  border: 1px solid rgba(251, 191, 36, 0.25);
+  color: #fde68a;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+@keyframes floatHeart {
+  0% {
+    opacity: 1;
+    transform: translate(var(--heart-x, 0px), 0px) scale(0.5) rotate(var(--heart-rot, 0deg));
+  }
+  50% {
+    opacity: 0.95;
+    transform: translate(calc(var(--heart-x, 0px) + var(--heart-drift, 10px)), -50px) scale(1.15) rotate(calc(var(--heart-rot, 0deg) + 12deg));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(var(--heart-x, 0px) + var(--heart-drift, 20px) * 1.5), -100px) scale(0.85) rotate(calc(var(--heart-rot, 0deg) + 24deg));
+  }
+}
+
+.animate-float-heart {
+  animation: floatHeart 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}

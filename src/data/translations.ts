@@ -1,0 +1,202 @@
+export const translations = {
+  ko: {
+    nav: {
+      schedule: '공연 일정표',
+      booths: '낮 & 밤 부스',
+      tarot: '오늘의 타로 뽑기',
+      liveTalk: '라이브 톡',
+      map: '아카데미 맵',
+      simulation: '시간 시뮬레이터',
+      mySchedule: '내 북마크'
+    },
+    header: {
+      date: '2026.09.17 (목)',
+      organizer: '제33대 총동아리연합회 개화',
+      title: '2026 마법학교 동아리밤',
+      subtitle: '사고뭉치 마법사와 비밀의 해독제',
+      liveNow: '실시간 진행중',
+      simulatedTime: '시뮬레이션 시간',
+      toggleSparkles: '마우스 마법 가루',
+      share: '축제 공유하기',
+      bookmarks: '보관함'
+    },
+    hero: {
+      alertBadge: '긴급 마법 퀘스트 발생!',
+      title1: '의문의 물약이 깨졌다!',
+      title2: '신비한 원소를 모아 해독제를 완성하라!',
+      storySnippet: '사고뭉치 마법사들의 실수로 깨진 물약! 퍼져나가는 보라빛 수증기와 정체불명의 저주를 막기 위해 조수 마법사는 마지와 함께 원소를 수집해야 합니다.',
+      btnDrawTarot: '오늘의 타로 뽑기',
+      btnViewSchedule: '실시간 공연 타임라인',
+      btnExploreBooths: '부스 탐험하기',
+      potionProgressTitle: '비밀 해독제 가마솥 완성도',
+      potionCollected: '수집 완료',
+      potionCompleteCelebration: '해독제 100% 완성! 저주가 정화되었습니다! 🎉'
+    },
+    timeline: {
+      title: '실시간 무대 & 타임라인',
+      subtitle: '공연 순서와 현재 무대 진행 상태를 실시간으로 확인하세요',
+      nowPlaying: 'NOW ON STAGE • 지금 무대',
+      upNext: 'UP NEXT • 다음 공연',
+      timeLeft: '남은 시간',
+      elapsed: '경과',
+      liveClock: '현재 시간',
+      timeSimMode: '시간 시뮬레이션 모드',
+      timeSimDesc: '시간 슬라이더나 바로가기 버튼을 눌러 축제 특정 시간대의 공연 진행 상황을 미리 체험하세요!',
+      resetToRealTime: '실제 시간으로 복귀',
+      filterAll: '전체 일정',
+      filterMusic: '음악 & 밴드',
+      filterDance: '댄스 & 무도',
+      filterContent: '이벤트 & 컨텐츠',
+      filterBookmarks: '내 북마크만',
+      searchPlaceholder: '공연명, 동아리, 태그 검색...',
+      noPerformances: '해당 조건의 공연 일정이 없습니다.'
+    },
+    booths: {
+      title: '마법 아카데미 캠퍼스 부스',
+      subtitle: '낮에는 활기찬 잔디마당, 밤에는 별빛 가득한 마법 포차!',
+      dayTab: '☀️ 낮 부스 (10:00 ~ 17:30)',
+      nightTab: '🌙 밤 부스 (18:00 ~ 23:25)',
+      dayThemeDesc: '푸른 잔디광장과 따스한 햇살 아래 펼쳐지는 동아리 체험, 타로, DIY 공방 & 달콤한 디저트 마켓!',
+      nightThemeDesc: '어둠이 내리면 켜지는 신비한 불꽃 조명, 야광 칵테일 바, 직화 꼬치구이 & 심야 어쿠스틱 버스킹!',
+      catDayTip: '낮에는 페이스페인팅이랑 매직 에이드를 꼭 맛봐야 한다냥! 🐾',
+      catNightTip: '밤에는 야광 칵테일이랑 불꽃 닭꼬치 먹으면서 무대 보는 게 최고다냥! 🐱✨',
+      allCategories: '전체',
+      catExperience: '체험 / 공방',
+      catFood: '푸드 / 디저트',
+      catPub: '야시장 / 펍',
+      catGoods: '굿즈 / 응모',
+      viewDetail: '상세 정보 보기',
+      menuList: '대표 메뉴 & 프로그램',
+      elementReward: '방문 시 획득 원소'
+    },
+    tarot: {
+      title: '오늘의 마법 타로 & 운세',
+      subtitle: '마지와 함께하는 오늘의 타로 카드 뽑기 & 맞춤 부스 추천',
+      btnShuffle: '신비의 타로 카드 섞기 & 뽑기',
+      btnReshuffle: '다시 뽑기',
+      cardBackText: '터치하여 카드를 뒤집으세요 ✨',
+      fortuneTitle: '오늘의 마법 운세',
+      recommendedBoothTitle: '마지의 추천 부스',
+      addedToPotion: '해독제 가마솥에 +15ml 주입 완료!',
+      shareResult: '운세 결과 공유하기'
+    },
+    liveTalk: {
+      title: '실시간 마법 라이브 톡 & 방명록',
+      subtitle: '무대 위의 동아리들을 응원하고 축제의 열기를 함께 나눠요!',
+      sendPlaceholder: '따뜻한 응원의 한마디를 적어주세요!',
+      authorPlaceholder: '닉네임 (예: 마법과 24학번)',
+      btnSend: '전송',
+      quickCheers: ['제스트 무대 레전드다 🔥', '태권도 격파 쾌감 대박 🥋', '23:10 상품추첨 대박 🎁', '마지 너무 귀여워 🐾', '개화 총동연 파이팅 🌸'],
+      likeSuccess: '응원을 보냈습니다!'
+    },
+    share: {
+      title: '동아리밤 친구에게 알리기',
+      subtitle: '2026 마법학교 축제 소식을 단톡방이나 친구에게 공유하세요!',
+      copyLink: '링크 복사',
+      copySuccess: '클립보드에 링크가 복사되었습니다!',
+      shareKaKao: '카카오톡 스타일 메시지 복사',
+      shareNative: '간편 공유하기',
+      cardTitle: '2026 마법학교 동아리밤 초대장'
+    }
+  },
+  en: {
+    nav: {
+      schedule: 'Stage Schedule',
+      booths: 'Day & Night Booths',
+      tarot: 'Lucky Magic Element',
+      liveTalk: 'Live Talk',
+      map: 'Academy Map',
+      simulation: 'Time Simulator',
+      mySchedule: 'My Bookmarks'
+    },
+    header: {
+      date: 'Sept 17, 2026 (Thu)',
+      organizer: 'The 33rd Club Association Gaehwa',
+      title: '2026 Magic Academy Club Night',
+      subtitle: 'Mischievous Wizards & The Lost Antidote',
+      liveNow: 'LIVE NOW',
+      simulatedTime: 'SIMULATED TIME',
+      toggleSparkles: 'Magic Cursor Dust',
+      share: 'Share Festival',
+      bookmarks: 'Saved'
+    },
+    hero: {
+      alertBadge: 'URGENT MAGIC QUEST!',
+      title1: 'The Mysterious Potion Shattered!',
+      title2: 'Collect Magic Elements to Brew the Antidote!',
+      storySnippet: 'Mischievous apprentice wizards accidentally broke the sacred potion! Gather magical elements across campus with mascot cat Maji to save the night!',
+      btnDrawTarot: 'Draw Lucky Magic Element',
+      btnViewSchedule: 'Live Stage Timeline',
+      btnExploreBooths: 'Explore Booths',
+      potionProgressTitle: 'Antidote Cauldron Power Level',
+      potionCollected: 'Collected',
+      potionCompleteCelebration: 'Antidote 100% Complete! The curse is lifted! 🎉'
+    },
+    timeline: {
+      title: 'Live Stage & Timetable',
+      subtitle: 'Track real-time stage performances and upcoming club showcases',
+      nowPlaying: 'NOW ON STAGE',
+      upNext: 'UP NEXT',
+      timeLeft: 'Time Remaining',
+      elapsed: 'Elapsed',
+      liveClock: 'Current Time',
+      timeSimMode: 'Time Simulation Mode',
+      timeSimDesc: 'Use the slider or quick jump buttons to preview what is happening on stage at any time during the festival!',
+      resetToRealTime: 'Reset to Real Time',
+      filterAll: 'All Shows',
+      filterMusic: 'Music & Band',
+      filterDance: 'Dance & Martial',
+      filterContent: 'Special Events',
+      filterBookmarks: 'My Bookmarks Only',
+      searchPlaceholder: 'Search show, club name, tags...',
+      noPerformances: 'No performances found matching your filter.'
+    },
+    booths: {
+      title: 'Magic Academy Campus Booths',
+      subtitle: 'Lush green daytime activities & starry midnight enchanted pub street!',
+      dayTab: '☀️ Day Booths (10:00 ~ 17:30)',
+      nightTab: '🌙 Night Booths (18:00 ~ 23:25)',
+      dayThemeDesc: 'Sunlit campus lawn market with club workshops, tarot readings, DIY keychains & sweet magic treats!',
+      nightThemeDesc: 'Enchanted night lanterns, glowing LED cocktails, charcoal skewers & midnight acoustic busking!',
+      catDayTip: 'Make sure to try face painting and magic boba tea during the day! 🐾',
+      catNightTip: 'Grab glowing cocktails and flame chicken skewers while watching the stage! 🐱✨',
+      allCategories: 'All',
+      catExperience: 'Experience / DIY',
+      catFood: 'Food / Dessert',
+      catPub: 'Night Pub / Bar',
+      catGoods: 'Merch / Raffle',
+      viewDetail: 'View Details',
+      menuList: 'Menu & Activities',
+      elementReward: 'Element Earned'
+    },
+    tarot: {
+      title: 'Today’s Lucky Magic Element & Tarot',
+      subtitle: 'Draw your destiny element with Maji and get custom booth pairings',
+      btnShuffle: 'Shuffle & Draw Magic Element',
+      btnReshuffle: 'Draw Again (Unlimited)',
+      cardBackText: 'Tap to flip the card ✨',
+      fortuneTitle: 'Today’s Magic Fortune',
+      recommendedBoothTitle: 'Maji’s Matched Booth',
+      addedToPotion: '+15ml added to the Antidote Cauldron!',
+      shareResult: 'Share Fortune Card'
+    },
+    liveTalk: {
+      title: 'Real-Time Magic Live Talk & Guestbook',
+      subtitle: 'Cheer for performing clubs and share the festival energy!',
+      sendPlaceholder: 'Please leave a warm word of encouragement!',
+      authorPlaceholder: 'Nickname (e.g. Apprentice 26)',
+      btnSend: 'Send',
+      quickCheers: ['Zest stage is legendary 🔥', 'Taekwondo board break was sick 🥋', 'Lucky draw at 23:10 🎁', 'Maji is so cute 🐾', 'Gaehwa Club Assoc fighting 🌸'],
+      likeSuccess: 'Sent cheer!'
+    },
+    share: {
+      title: 'Invite Friends to Club Night',
+      subtitle: 'Share 2026 Magic Academy Club Night info with your friends & group chats!',
+      copyLink: 'Copy Link',
+      copySuccess: 'Link copied to clipboard!',
+      shareKaKao: 'Copy KakaoTalk Style Message',
+      shareNative: 'Quick Share',
+      cardTitle: '2026 Magic Academy Club Night Invitation'
+    }
+  }
+};

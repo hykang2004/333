@@ -1,0 +1,6 @@
+{
+  "name": "한국기술교육대학교 마법학교 동아리밤",
+  "description": "2026년 9월 17일 한국기술교육대학교 중앙 잔디밭에서 열리는 제33대 총동아리연합회 [개화] 동아리밤 축제 안내 웹앱.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
