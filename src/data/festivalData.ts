@@ -7,17 +7,17 @@ export const FESTIVAL_ORGANIZER_KO = '제33대 총동아리연합회 개화';
 export const FESTIVAL_ORGANIZER_EN = 'The 33rd Club Association Gaehwa';
 export const FESTIVAL_TITLE_KO = '2026 마법학교 동아리밤';
 export const FESTIVAL_TITLE_EN = '2026 Magic Academy Club Night';
-export const FESTIVAL_SUBTITLE_KO = '마지와 사라진 비밀 해독제 대작전';
-export const FESTIVAL_SUBTITLE_EN = 'Maji & The Lost Antidote Adventure';
+export const FESTIVAL_SUBTITLE_KO = '깜냥이와 사라진 비밀 해독제 대작전';
+export const FESTIVAL_SUBTITLE_EN = 'Kkamnyangi & The Lost Antidote Adventure';
 
 export const STORYLINE_KO = `사고뭉치 마법사들의 실수로 의문의 물약이 깨졌다! 
 순식간에 퍼진 신비한 보라빛 수증기와 함께 시작된 정체불명의 저주!
-시간이 얼마 남지 않았습니다. 조수 마법사는 마스코트 고양이 '마지'를 도와 
+시간이 얼마 남지 않았습니다. 조수 마법사는 마스코트 고양이 '깜냥이'를 도와 
 캠퍼스 곳곳의 동아리 부스와 무대에서 신비한 마법 원소들을 모아 특제 해독제를 완성하세요!`;
 
 export const STORYLINE_EN = `A mysterious potion shattered by mischievous apprentice wizards! 
 Purple enchanted mist spread across the campus, triggering an unknown spell!
-Time is running out. Help our mascot cat 'Maji' collect mystical elements 
+Time is running out. Help our mascot cat 'Kkamnyangi' collect mystical elements 
 from club booths and stage performances to brew the golden antidote before the night ends!`;
 
 // Overall Key Milestone Schedule
@@ -50,9 +50,9 @@ export const OVERALL_SCHEDULE: OverallScheduleItem[] = [
     id: 'ov-3',
     titleKo: '밤 부스 & 야시장 운영',
     titleEn: 'Night Booth & Pubs',
-    timeRange: '18:00 ~ 23:25',
+    timeRange: '18:00 ~ 23:15',
     startMinutes: 18 * 60,      // 1080
-    endMinutes: 23 * 60 + 25,   // 1405
+    endMinutes: 23 * 60 + 15,   // 1395
     type: 'night_booth',
     locationKo: '중앙 잔디밭 주변 푸드 & 펍 스트리트',
     locationEn: 'Central Lawn Pub & Food Street',
@@ -62,9 +62,9 @@ export const OVERALL_SCHEDULE: OverallScheduleItem[] = [
     id: 'ov-4',
     titleKo: '동아리밤 메인 스테이지 공연',
     titleEn: 'Main Stage Live Shows',
-    timeRange: '18:30 ~ 23:00',
+    timeRange: '18:30 ~ 22:50',
     startMinutes: 18 * 60 + 30, // 1110
-    endMinutes: 23 * 60,        // 1380
+    endMinutes: 22 * 60 + 50,   // 1370
     type: 'performance',
     locationKo: '중앙 잔디밭 특설 메인무대',
     locationEn: 'Central Lawn Special Stage',
@@ -74,9 +74,9 @@ export const OVERALL_SCHEDULE: OverallScheduleItem[] = [
     id: 'ov-5',
     titleKo: '무대 엔딩',
     titleEn: 'Stage Ending',
-    timeRange: '23:00 ~ 23:10',
-    startMinutes: 23 * 60,        // 1380
-    endMinutes: 23 * 60 + 10,   // 1390
+    timeRange: '22:50 ~ 23:00',
+    startMinutes: 22 * 60 + 50, // 1370
+    endMinutes: 23 * 60,        // 1380
     type: 'closing',
     locationKo: '중앙 잔디밭 특설 메인무대',
     locationEn: 'Central Lawn Special Stage',
@@ -86,9 +86,9 @@ export const OVERALL_SCHEDULE: OverallScheduleItem[] = [
     id: 'ov-6',
     titleKo: '행운의 상품추첨',
     titleEn: 'Lucky Draw & Grand Raffle',
-    timeRange: '23:10 ~ 23:25',
-    startMinutes: 23 * 60 + 10, // 1390
-    endMinutes: 23 * 60 + 25,   // 1405
+    timeRange: '23:00 ~ 23:15',
+    startMinutes: 23 * 60,      // 1380
+    endMinutes: 23 * 60 + 15,   // 1395
     type: 'raffle',
     locationKo: '중앙 잔디밭 특설 메인무대',
     locationEn: 'Central Lawn Special Stage',
@@ -111,7 +111,7 @@ export const PERFORMANCE_SCHEDULE: PerformanceItem[] = [
     endMinutes: 18 * 60 + 30,   // 1110
     descriptionKo: '오늘의 설렘과 기대를 가득 담아 힘찬 출발을 선언하는 오프닝입니다.',
     descriptionEn: 'An energetic opening ceremony packed with today\'s excitement and high expectations, declaring a spirited start.',
-    tagsKo: ['개회사', '개화', '점등식', '마지'],
+    tagsKo: ['개회사', '개화', '점등식', '깜냥이'],
     tagsEn: ['Opening', 'Gaehwa', 'Lighting', 'Mascot'],
     locationKo: '중앙 잔디밭 특설무대',
     locationEn: 'Central Lawn Special Stage'
@@ -158,8 +158,8 @@ export const PERFORMANCE_SCHEDULE: PerformanceItem[] = [
   },
   {
     id: 'p-4',
-    titleKo: '제스트',
-    titleEn: 'Zest',
+    titleKo: 'ZEST',
+    titleEn: 'ZEST',
     clubNameKo: '',
     clubNameEn: '',
     category: 'music',
@@ -178,8 +178,8 @@ export const PERFORMANCE_SCHEDULE: PerformanceItem[] = [
   },
   {
     id: 'p-5',
-    titleKo: '아리아',
-    titleEn: 'Aria',
+    titleKo: 'ARIA',
+    titleEn: 'ARIA',
     clubNameKo: '',
     clubNameEn: '',
     category: 'dance',
@@ -191,8 +191,8 @@ export const PERFORMANCE_SCHEDULE: PerformanceItem[] = [
     descriptionEn: 'A high-octane cheer performance that instantly boosts the energy! Electrifying synchronized choreography and overflowing passion heating up the festival.',
     tagsKo: ['응원단', '칼군무', '파워풀', '텐션UP'],
     tagsEn: ['Cheerleading', 'Choreography', 'Energy', 'High Tension'],
-    setListKo: ['질풍가도 (응원가)', '그대에게', '아리아 오리지널 치어링 루틴'],
-    setListEn: ['Gale Road (Cheering)', 'To You', 'Aria Original Routine'],
+    setListKo: ['질풍가도 (응원가)', '그대에게', 'ARIA 오리지널 치어링 루틴'],
+    setListEn: ['Gale Road (Cheering)', 'To You', 'ARIA Original Routine'],
     locationKo: '중앙 잔디밭 특설무대',
     locationEn: 'Central Lawn Special Stage'
   },
@@ -314,8 +314,8 @@ export const PERFORMANCE_SCHEDULE: PerformanceItem[] = [
   },
   {
     id: 'p-12',
-    titleKo: '스콘',
-    titleEn: 'Scone',
+    titleKo: 'SCON',
+    titleEn: 'SCON',
     clubNameKo: '',
     clubNameEn: '',
     category: 'music',
@@ -340,9 +340,9 @@ export const PERFORMANCE_SCHEDULE: PerformanceItem[] = [
     clubNameEn: '',
     category: 'dance',
     startTime: '22:20',
-    endTime: '23:00',
+    endTime: '22:50',
     startMinutes: 22 * 60 + 20, // 1340
-    endMinutes: 23 * 60,        // 1380
+    endMinutes: 22 * 60 + 50,   // 1370
     descriptionKo: '거침없는 랩과 파워풀한 댄스가 만나 무대를 불태웁니다. 캠퍼스를 뒤흔드는 폭발적인 열정과 패기를 직접 확인해보세요.',
     descriptionEn: 'Relentless rap meets powerful dance to set the stage on fire! Experience the explosive passion and youth rocking the campus.',
     tagsKo: ['랩', '파워풀댄스', '폭발적열정', '패기'],
@@ -359,10 +359,10 @@ export const PERFORMANCE_SCHEDULE: PerformanceItem[] = [
     clubNameKo: '',
     clubNameEn: '',
     category: 'closing',
-    startTime: '23:00',
-    endTime: '23:10',
-    startMinutes: 23 * 60,      // 1380
-    endMinutes: 23 * 60 + 10,   // 1390
+    startTime: '22:50',
+    endTime: '23:00',
+    startMinutes: 22 * 60 + 50, // 1370
+    endMinutes: 23 * 60,        // 1380
     descriptionKo: "특별한 오늘을 마음에 담으며 축제를 마무리하는 시간입니다. 가장 찬란하게 피어날 여러분의 꿈과 열정을 '개화'가 언제나 든든하게 응원하겠습니다.",
     descriptionEn: "A moment to cherish today's special memories and close the festival. 'Gaehwa' will always wholeheartedly support your dreams and passion that bloom most brilliantly.",
     tagsKo: ['피날레', '무대엔딩', '단체사진', '안녕개화'],
@@ -377,10 +377,10 @@ export const PERFORMANCE_SCHEDULE: PerformanceItem[] = [
     clubNameKo: '',
     clubNameEn: '',
     category: 'raffle',
-    startTime: '23:10',
-    endTime: '23:25',
-    startMinutes: 23 * 60 + 10, // 1390
-    endMinutes: 23 * 60 + 25,   // 1405
+    startTime: '23:00',
+    endTime: '23:15',
+    startMinutes: 23 * 60,      // 1380
+    endMinutes: 23 * 60 + 15,   // 1395
     descriptionKo: '오늘 축제를 더욱 뜨겁게 달궈줄 상상 초월의 역대급 상품들이 기다리고 있습니다. 모두의 부러움을 한 몸에 받을 엄청난 행운의 주인공은 과연 누구일까요? 놓칠 수 없는 짜릿한 기회를 직접 확인해 보세요.',
     descriptionEn: 'Mind-blowing, epic prizes are waiting to heat up the festival tonight! Who will be the lucky protagonist envied by everyone? Check out this thrilling opportunity you cannot miss.',
     tagsKo: ['상품추첨', '역대급상품', '행운의주인공', '짜릿한기회'],
@@ -958,7 +958,7 @@ export const MAGIC_ELEMENTS: MagicElement[] = [
     color: 'from-yellow-300 to-amber-500',
     bgColor: 'bg-amber-950/60 border-amber-400/40',
     glowColor: 'shadow-amber-500/30',
-    catCommentKo: '달콤한 냄새가 솔솔~ 마지도 한 입 먹고 싶지만 해독제에 양보하겠다냥! 🍯',
+    catCommentKo: '달콤한 냄새가 솔솔~ 깜냥이도 한 입 먹고 싶지만 해독제에 양보하겠다냥! 🍯',
     catCommentEn: 'Smells delicious~ I want a lick, but I’ll save it for the potion recipe! 🍯',
     potionBonusMl: 10
   },
@@ -979,7 +979,7 @@ export const MAGIC_ELEMENTS: MagicElement[] = [
     color: 'from-emerald-300 to-teal-500',
     bgColor: 'bg-teal-950/60 border-teal-400/40',
     glowColor: 'shadow-teal-500/30',
-    catCommentKo: '살랑살랑~ 마지 꼬리처럼 흔들리는 바람풀 덕분에 기분이 상쾌해졌다냥! 🌿',
+    catCommentKo: '살랑살랑~ 깜냥이 꼬리처럼 흔들리는 바람풀 덕분에 기분이 상쾌해졌다냥! 🌿',
     catCommentEn: 'Swaying like my cat tail~ Whispering windgrass brings a fresh breeze! 🌿',
     potionBonusMl: 10
   },
@@ -1034,7 +1034,7 @@ export const MAGIC_ELEMENTS: MagicElement[] = [
     titleEn: 'Endless Vitality & Rebirth',
     descriptionKo: '밤하늘을 가로지르는 불사조의 날개에서 떨어진 황금빛 깃털. 축제를 끝까지 즐길 수 있는 무한 에너지를 줍니다.',
     descriptionEn: 'Golden feather dropped by a celestial phoenix. Grants limitless energy to celebrate all night.',
-    fortuneKo: '오늘 밤 당신의 체력은 무한대! 마지막 앵콜과 22:50 경품 추첨까지 지치지 않고 즐기실 수 있습니다.',
+    fortuneKo: '오늘 밤 당신의 체력은 무한대! 마지막 앵콜과 23:00 상품추첨까지 지치지 않고 즐기실 수 있습니다.',
     fortuneEn: 'Your stamina is infinite tonight! You will rock every single stage until the midnight encore.',
     recommendedBoothId: 'b-a-10',
     boothReasonKo: '[A-Zone 푸드존] 월드상사의 훈제 바베큐목살 & 훈제오리로 든든한 파워 업!',
@@ -1063,7 +1063,7 @@ export const MAGIC_ELEMENTS: MagicElement[] = [
     color: 'from-blue-400 to-indigo-500',
     bgColor: 'bg-blue-950/60 border-blue-400/40',
     glowColor: 'shadow-blue-500/30',
-    catCommentKo: '마지도 이 책 읽고 똑똑해졌다냥! (물론 낮잠이 더 좋다냥... 💤)',
+    catCommentKo: '깜냥이도 이 책 읽고 똑똑해졌다냥! (물론 낮잠이 더 좋다냥... 💤)',
     catCommentEn: 'I read this grimoire and gained 200 IQ meow! (Still prefer naps though... 💤)',
     potionBonusMl: 15
   },
@@ -1084,7 +1084,7 @@ export const MAGIC_ELEMENTS: MagicElement[] = [
     color: 'from-emerald-400 to-teal-400',
     bgColor: 'bg-teal-950/60 border-emerald-400/40',
     glowColor: 'shadow-emerald-500/30',
-    catCommentKo: '꽉 잡아라냥~! 마지와 함께 빗자루를 타고 밤하늘을 날아 최고의 명당을 찾아가자냥! 🐾💨✨',
+    catCommentKo: '꽉 잡아라냥~! 깜냥이와 함께 빗자루를 타고 밤하늘을 날아 최고의 명당을 찾아가자냥! 🐾💨✨',
     catCommentEn: 'Hold on tight meow~! Let’s glide across the night sky to the best spot at the festival! 🐾💨✨',
     potionBonusMl: 15
   },

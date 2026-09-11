@@ -20,20 +20,20 @@ interface FloatingHeart {
 const HEART_COLORS = ['#f472b6', '#fb7185', '#f43f5e', '#fbbf24', '#c084fc', '#38bdf8'];
 
 const CAT_TIPS_KO = [
-  '개화 부스에서 마지 페이스페인팅도 받아요!',
+  '개화 부스에서 깜냥이 페이스페인팅도 받아요!',
   '2026 마법학교 동아리밤에 오신 것을 환영합니다! 🐾',
   '18:20 개회사를 시작으로 10팀의 멋진 무대가 펼쳐집니다 ✨',
   '오늘 나에게 어울리는 행운의 타로 카드를 뽑아보세요 🔮',
-  '23:10에 경품 추첨이 진행됩니다 🎁',
+  '23:00에 상품 추첨이 진행됩니다 🎁',
   '낮에는 중앙 잔디밭 체험 부스, 밤에는 맛있는 야식 부스를 즐겨보세요 🍢'
 ];
 
 const CAT_TIPS_EN = [
-  'Get a Maji face painting at the Gaehwa booth!',
+  'Get a Kkamnyangi face painting at the Gaehwa booth!',
   'Welcome to the 2026 Magic Academy Club Night! 🐾',
   '10 live performances kick off at 18:20 on the main stage ✨',
   'Draw your lucky tarot card and tailored booth recommendation 🔮',
-  'Lucky draw takes place at 23:10 🎁',
+  'Lucky draw takes place at 23:00 🎁',
   'Enjoy interactive daytime booths and tasty midnight snack stalls 🍢'
 ];
 
@@ -123,7 +123,7 @@ export const MascotKkamnyangi: React.FC<MascotProps> = ({ language, onOpenTarot 
           
           <div className="flex items-center gap-1.5 font-semibold text-amber-300 text-xs mb-1.5">
             <Sparkles className="w-3 h-3 text-amber-400" />
-            <span>{isKo ? '마스코트 마지' : 'Mascot Maji'}</span>
+            <span>{isKo ? '깜냥이' : 'Kkamnyangi'}</span>
           </div>
 
           <p className="text-slate-200 leading-relaxed font-light cursor-pointer text-xs pr-4" onClick={handleNextTip}>
@@ -175,12 +175,12 @@ export const MascotKkamnyangi: React.FC<MascotProps> = ({ language, onOpenTarot 
       <button
         onClick={handleCatClick}
         className="relative group bg-[#0e1424] p-1.5 rounded-full border border-amber-400/30 shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer mt-1"
-        title={isKo ? '마지 쓰다듬기' : 'Pet Maji'}
+        title={isKo ? '깜냥이 쓰다듬기' : 'Pet Kkamnyangi'}
       >
         <div className="w-12 h-12 md:w-13 md:h-13 rounded-full overflow-hidden border border-amber-400/50 bg-slate-900 flex items-center justify-center">
           <img
             src="/131.png"
-            alt="마지 마스코트"
+            alt="깜냥이 마스코트"
             className="w-full h-full object-cover object-center"
             onError={(e) => {
               const target = e.currentTarget;

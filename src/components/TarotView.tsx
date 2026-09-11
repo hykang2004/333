@@ -88,8 +88,8 @@ export const TarotView: React.FC<TarotViewProps> = ({
   const handleCopyFortune = () => {
     if (!selectedElement) return;
     const text = isKo
-      ? `[2026 동아리밤 오늘의 타로 운세]\n✨ ${selectedElement.nameKo}\n운세: ${selectedElement.fortuneKo}\n마지의 조언: "${selectedElement.catCommentKo}"\n추천 부스: ${selectedElement.boothReasonKo}`
-      : `[2026 Club Night Tarot Fortune]\n✨ ${selectedElement.nameEn}\nFortune: ${selectedElement.fortuneEn}\nMaji's note: "${selectedElement.catCommentEn}"\nRecommended booth: ${selectedElement.boothReasonEn}`;
+      ? `[2026 동아리밤 오늘의 타로 운세]\n✨ ${selectedElement.nameKo}\n운세: ${selectedElement.fortuneKo}\n깜냥이의 조언: "${selectedElement.catCommentKo}"\n추천 부스: ${selectedElement.boothReasonKo}`
+      : `[2026 Club Night Tarot Fortune]\n✨ ${selectedElement.nameEn}\nFortune: ${selectedElement.fortuneEn}\nKkamnyangi's note: "${selectedElement.catCommentEn}"\nRecommended booth: ${selectedElement.boothReasonEn}`;
 
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
@@ -275,7 +275,7 @@ export const TarotView: React.FC<TarotViewProps> = ({
                   <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg overflow-hidden border border-amber-400/30 flex-shrink-0 bg-slate-900">
                     <img
                       src="/1313/1313.png"
-                      alt="마지"
+                      alt="깜냥이"
                       className="w-full h-full object-cover object-center"
                       onError={(e) => {
                         const target = e.currentTarget;
@@ -287,7 +287,7 @@ export const TarotView: React.FC<TarotViewProps> = ({
                   </div>
                   <div className="flex-1 min-w-0">
                     <span className="text-[10px] text-amber-400/90 font-medium block">
-                      {isKo ? '마지의 한마디' : "Maji's Note"}
+                      {isKo ? '깜냥이의 한마디' : "Kkamnyangi's Note"}
                     </span>
                     <p className="text-slate-300 font-light leading-snug mt-0.5">
                       "{isKo ? selectedElement.catCommentKo : selectedElement.catCommentEn}"

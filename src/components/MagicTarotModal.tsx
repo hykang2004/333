@@ -101,8 +101,8 @@ export const MagicTarotModal: React.FC<TarotModalProps> = ({
   const handleCopyFortune = () => {
     if (!selectedElement) return;
     const text = isKo
-      ? `[2026 동아리밤 오늘의 타로 운세]\n✨ ${selectedElement.nameKo}\n운세: ${selectedElement.fortuneKo}\n마지의 조언: "${selectedElement.catCommentKo}"\n추천 부스: ${selectedElement.boothReasonKo}`
-      : `[2026 Club Night Tarot Fortune]\n✨ ${selectedElement.nameEn}\nFortune: ${selectedElement.fortuneEn}\nMaji's note: "${selectedElement.catCommentEn}"\nRecommended booth: ${selectedElement.boothReasonEn}`;
+      ? `[2026 동아리밤 오늘의 타로 운세]\n✨ ${selectedElement.nameKo}\n운세: ${selectedElement.fortuneKo}\n깜냥이의 조언: "${selectedElement.catCommentKo}"\n추천 부스: ${selectedElement.boothReasonKo}`
+      : `[2026 Club Night Tarot Fortune]\n✨ ${selectedElement.nameEn}\nFortune: ${selectedElement.fortuneEn}\nKkamnyangi's note: "${selectedElement.catCommentEn}"\nRecommended booth: ${selectedElement.boothReasonEn}`;
 
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
@@ -152,7 +152,7 @@ export const MagicTarotModal: React.FC<TarotModalProps> = ({
           <div className="relative w-11 h-11 rounded-xl overflow-hidden border border-amber-400/30 flex-shrink-0 bg-slate-900">
             <img
               src="/131.png"
-              alt="마지 마스코트"
+              alt="깜냥이 마스코트"
               className="w-full h-full object-cover object-center"
               onError={(e) => {
                 const target = e.currentTarget;
@@ -166,7 +166,7 @@ export const MagicTarotModal: React.FC<TarotModalProps> = ({
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-semibold text-amber-300 flex items-center gap-1">
                 <Sparkles className="w-3 h-3 text-amber-400" />
-                <span>{isKo ? '마스코트 마지' : 'Mascot Maji'}</span>
+                <span>{isKo ? '깜냥이' : 'Kkamnyangi'}</span>
               </span>
               <span className="text-[10px] text-slate-400">
                 {drawState === 'revealed' ? (isKo ? '추천 완료' : 'Revealed') : (isKo ? '랜덤 추첨' : 'Random Draw')}
@@ -344,7 +344,7 @@ export const MagicTarotModal: React.FC<TarotModalProps> = ({
                   <div className="w-8 h-8 rounded-lg overflow-hidden border border-amber-400/30 flex-shrink-0 bg-slate-900">
                     <img
                       src="/131.png"
-                      alt="마지"
+                      alt="깜냥이"
                       className="w-full h-full object-cover object-center"
                       onError={(e) => {
                         const target = e.currentTarget;
@@ -356,7 +356,7 @@ export const MagicTarotModal: React.FC<TarotModalProps> = ({
                   </div>
                   <div className="flex-1 min-w-0">
                     <span className="text-[10px] text-amber-400/90 font-medium block">
-                      {isKo ? '마지의 한마디' : "Maji's Note"}
+                      {isKo ? '깜냥이의 한마디' : "Kkamnyangi's Note"}
                     </span>
                     <p className="text-slate-300 font-light leading-snug mt-0.5">
                       "{isKo ? selectedElement.catCommentKo : selectedElement.catCommentEn}"

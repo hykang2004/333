@@ -48,8 +48,8 @@ export const PerformanceScheduleView: React.FC<ScheduleViewProps> = ({
             </h2>
             <p className="text-[11px] sm:text-xs text-slate-400 mt-0.5 font-sans font-light">
               {isKo
-                ? '18:20 개회사부터 23:25 피날레까지 이어지는 실시간 라이브 무대'
-                : 'Live stage performances from 18:20 opening to 23:25 grand finale'}
+                ? '18:20 개회사부터 23:15 피날레까지 이어지는 실시간 라이브 무대'
+                : 'Live stage performances from 18:20 opening to 23:15 grand finale'}
             </p>
           </div>
 

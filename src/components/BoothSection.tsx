@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sun, Moon, Compass, ChevronRight } from 'lucide-react';
+import { Moon, Compass, ChevronRight } from 'lucide-react';
 import { BoothItem, Language } from '../types';
 import { translations } from '../data/translations';
 
@@ -17,16 +17,9 @@ export const BoothSection: React.FC<BoothSectionProps> = ({
   const t = translations[language];
   const isKo = language === 'ko';
 
-  const [activeTab, setActiveTab] = useState<'day' | 'night'>('day');
   const [selectedZone, setSelectedZone] = useState<string>('all');
 
   const filteredBooths = booths.filter((b) => {
-    if (activeTab === 'day') {
-      if (b.timeType !== 'day' && b.timeType !== 'both') return false;
-    } else {
-      if (b.timeType !== 'night' && b.timeType !== 'both') return false;
-    }
-
     if (selectedZone !== 'all' && !b.locationZone.includes(selectedZone)) {
       return false;
     }
@@ -50,51 +43,8 @@ export const BoothSection: React.FC<BoothSectionProps> = ({
             {t.booths.title}
           </h2>
           <p className="text-xs sm:text-sm text-slate-400 font-sans font-light">
-            {activeTab === 'day' ? t.booths.dayThemeDesc : t.booths.nightThemeDesc}
+            {t.booths.subtitle}
           </p>
-        </div>
-
-        {/* DAY / NIGHT SWITCH */}
-        <div className="flex justify-center">
-          <div className="bg-[#0e1424] p-1.5 rounded-2xl border border-white/5 shadow-lg flex items-center gap-1.5 max-w-sm w-full font-sans">
-            <button
-              onClick={() => setActiveTab('day')}
-              className={`flex-1 py-2.5 px-3 rounded-xl flex flex-col items-center justify-center text-center transition-all cursor-pointer ${
-                activeTab === 'day'
-                  ? 'bg-amber-400 text-slate-950 font-bold shadow'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
-              }`}
-            >
-              <div className="flex items-center justify-center gap-1.5 text-sm sm:text-base font-bold">
-                <Sun className={`w-4 h-4 ${activeTab === 'day' ? 'fill-slate-950 text-slate-950' : 'text-amber-400'}`} />
-                <span>{isKo ? '낮 부스' : 'Day Booths'}</span>
-              </div>
-              <span className={`text-[11px] sm:text-xs mt-0.5 tabular-nums ${
-                activeTab === 'day' ? 'text-slate-900/85 font-medium' : 'text-slate-400'
-              }`}>
-                10:00 ~ 17:30
-              </span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab('night')}
-              className={`flex-1 py-2.5 px-3 rounded-xl flex flex-col items-center justify-center text-center transition-all cursor-pointer ${
-                activeTab === 'night'
-                  ? 'bg-slate-800 text-amber-300 border border-amber-400/30 font-bold shadow'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
-              }`}
-            >
-              <div className="flex items-center justify-center gap-1.5 text-sm sm:text-base font-bold">
-                <Moon className={`w-4 h-4 ${activeTab === 'night' ? 'fill-amber-300 text-amber-300' : 'text-slate-400'}`} />
-                <span>{isKo ? '밤 부스' : 'Night Booths'}</span>
-              </div>
-              <span className={`text-[11px] sm:text-xs mt-0.5 tabular-nums ${
-                activeTab === 'night' ? 'text-amber-200/85 font-medium' : 'text-slate-400'
-              }`}>
-                18:00 ~ 23:25
-              </span>
-            </button>
-          </div>
         </div>
 
         {/* Mascot Speech Tip */}
@@ -102,7 +52,7 @@ export const BoothSection: React.FC<BoothSectionProps> = ({
           <div className="w-9 h-9 rounded-lg overflow-hidden border border-amber-400/30 flex-shrink-0 bg-slate-900 shadow">
             <img
               src="/131.png"
-              alt="마지"
+              alt="깜냥이"
               className="w-full h-full object-cover object-center"
               onError={(e) => {
                 const target = e.currentTarget;
@@ -114,9 +64,9 @@ export const BoothSection: React.FC<BoothSectionProps> = ({
           </div>
           <div className="text-xs text-slate-300 font-sans font-light">
             <span className="text-amber-300 font-medium mr-1.5">
-              {isKo ? '마지의 부스 팁:' : "Maji's Tip:"}
+              {isKo ? '깜냥이의 부스 팁:' : "Kkamnyangi's Tip:"}
             </span>
-            {activeTab === 'day' ? t.booths.catDayTip : t.booths.catNightTip}
+            {t.booths.catDayTip}
           </div>
         </div>
 

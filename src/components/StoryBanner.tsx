@@ -182,7 +182,7 @@ export const StoryBanner: React.FC<StoryBannerProps> = ({
             <div className="bg-[#090e1d] rounded-2xl p-4 border border-white/5 space-y-1">
               <div className="flex items-center gap-2 text-amber-300 font-semibold text-xs sm:text-sm font-serif-magic">
                 <Gift className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                <span>{isKo ? '23:10 대망의 상품추첨' : '23:10 Grand Lucky Draw'}</span>
+                <span>{isKo ? '23:00 대망의 상품추첨' : '23:00 Grand Lucky Draw'}</span>
               </div>
               <p className="text-xs text-slate-300 leading-relaxed font-sans font-light">
                 {isKo
@@ -197,7 +197,7 @@ export const StoryBanner: React.FC<StoryBannerProps> = ({
             <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden border border-amber-400/30 shadow bg-slate-900 flex-shrink-0">
               <img
                 src="/131.png"
-                alt="공식 마스코트 마지"
+                alt="공식 마스코트 깜냥이"
                 className="w-full h-full object-cover object-center"
                 onError={(e) => {
                   const target = e.currentTarget;
@@ -211,7 +211,7 @@ export const StoryBanner: React.FC<StoryBannerProps> = ({
             <div className="text-center sm:text-left space-y-0.5 flex-1 min-w-0">
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
                 <span className="font-bold text-white text-sm">
-                  {isKo ? '축제 마스코트 마지' : 'Festival Mascot Maji'}
+                  {isKo ? '축제 마스코트 깜냥이' : 'Festival Mascot Kkamnyangi'}
                 </span>
                 <span className="text-[10px] bg-amber-400/10 text-amber-300 border border-amber-400/20 px-2 py-0.5 rounded-full">
                   {isKo ? '안내 도우미' : 'Guide'}
@@ -219,8 +219,8 @@ export const StoryBanner: React.FC<StoryBannerProps> = ({
               </div>
               <p className="text-xs text-slate-300 leading-relaxed font-light">
                 {isKo
-                  ? '우측 하단의 마지를 클릭하면 실시간 축제 꿀팁과 오늘의 타로 뽑기를 이용할 수 있습니다.'
-                  : 'Click Maji in the bottom-right for live festival tips and today’s tarot draw.'}
+                  ? '우측 하단의 깜냥이를 클릭하면 실시간 축제 꿀팁과 오늘의 타로 뽑기를 이용할 수 있습니다.'
+                  : 'Click Kkamnyangi in the bottom-right for live festival tips and today’s tarot draw.'}
               </p>
             </div>
           </div>

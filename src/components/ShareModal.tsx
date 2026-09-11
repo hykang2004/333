@@ -20,8 +20,8 @@ export const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, languag
   const shareUrl = window.location.href;
 
   const kakaoMessageText = isKo
-    ? `[2026 마법학교 동아리밤 초대장 🪄🌙]\n\n제33대 총동아리연합회 개화와 함께하는 신비한 달빛 축제!\n- 장소: 한국기술교육대학교 중앙 잔디밭\n- 일시: 2026.09.17(목) 10:30~23:25\n- 메인공연: 18:20~23:00 (K-오케스트라, 제스트, 선문대 태권도, 스콘, 빠샤 등)\n- 낮/밤 부스 & 23:10 상품추첨!\n\n마지와 함께 마법 같은 축제를 즐기러 가요!\n👉 ${shareUrl}`
-    : `[2026 Magic Academy Club Night Invitation 🪄🌙]\n\nJoin the 33rd Club Association Gaehwa for an enchanted night!\n- Location: KOREATECH Central Lawn\n- Date: Sept 17, 2026 (Thu)\n- Live Shows: 18:20 ~ 23:00\n- Day & Night Booths + Grand Lucky Draw at 23:10!\n\n👉 ${shareUrl}`;
+    ? `[2026 마법학교 동아리밤 초대장 🪄🌙]\n\n제33대 총동아리연합회 개화와 함께하는 신비한 달빛 축제!\n- 장소: 한국기술교육대학교 중앙 잔디밭\n- 일시: 2026.09.17(목) 10:30~23:15\n- 메인공연: 18:20~22:50 (K-오케스트라, ZEST, 선문대 태권도, SCON, 빠샤 등)\n- 낮/밤 부스 & 23:00 상품추첨!\n\n깜냥이와 함께 마법 같은 축제를 즐기러 가요!\n👉 ${shareUrl}`
+    : `[2026 Magic Academy Club Night Invitation 🪄🌙]\n\nJoin the 33rd Club Association Gaehwa for an enchanted night!\n- Location: KOREATECH Central Lawn\n- Date: Sept 17, 2026 (Thu)\n- Live Shows: 18:20 ~ 22:50\n- Day & Night Booths + Grand Lucky Draw at 23:00!\n\n👉 ${shareUrl}`;
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(shareUrl);
