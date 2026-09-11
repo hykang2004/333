@@ -22,20 +22,22 @@ export const HomeView: React.FC<HomeViewProps> = ({
   return (
     <div className="max-w-xl sm:max-w-2xl mx-auto px-4 pt-4 sm:pt-6 pb-2 sm:pb-4 space-y-5 sm:space-y-6 relative z-10 font-sans">
       
-      {/* 1. 맨 위: qwe 메인 포스터 이미지 (클릭 불가, 디자인용) */}
-      <div className="w-full relative rounded-3xl overflow-hidden border border-amber-400/30 shadow-2xl shadow-amber-500/10 pointer-events-none select-none bg-[#0a0f1d]">
-        <div className="w-full aspect-[2/3] relative overflow-hidden flex items-center justify-center">
-          <img
-            src="/qwe/qwe.png"
-            alt="2026 동아리밤 메인 포스터"
-            className="w-full h-full object-cover object-center pointer-events-none select-none"
-            onError={(e) => {
-              const target = e.currentTarget;
-              if (!target.src.endsWith('/qwe.png')) {
-                target.src = '/qwe.png';
-              }
-            }}
-          />
+      {/* 1. 맨 위: asd 동영상 (asd/asd.mp4) */}
+      <div className="w-full relative rounded-3xl overflow-hidden border border-amber-400/30 shadow-2xl shadow-amber-500/10 bg-[#0a0f1d]">
+        <div className="w-full aspect-video relative overflow-hidden flex items-center justify-center bg-black">
+          <video
+            src="/asd/asd.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            controls
+            className="w-full h-full object-cover object-center"
+          >
+            <source src="/asd/asd.mp4" type="video/mp4" />
+            <source src="/asd.mp4" type="video/mp4" />
+            동영상을 재생할 수 없습니다.
+          </video>
           {/* Subtle Outer Frame Inset */}
           <div className="absolute inset-0 rounded-3xl border border-white/10 pointer-events-none" />
         </div>
