@@ -52,6 +52,7 @@ export const MagicTarotModal: React.FC<TarotModalProps> = ({
   const [selectedElement, setSelectedElement] = useState<MagicElement | null>(null);
   const [copied, setCopied] = useState(false);
   const [activeCardIndex, setActiveCardIndex] = useState<number | null>(null);
+  const [catImageSrc, setCatImageSrc] = useState<string>('/IMG_3234.jpeg');
   const lastDrawnIdRef = React.useRef<string | null>(null);
 
   // Reset state when modal opens
@@ -70,6 +71,11 @@ export const MagicTarotModal: React.FC<TarotModalProps> = ({
     setActiveCardIndex(cardIdx);
     setDrawState('drawing');
     setCopied(false);
+
+    // Pick randomly between newly uploaded cat images
+    const catImages = ['/IMG_3234.jpeg', '/IMG_3235.jpeg'];
+    const chosenCat = catImages[Math.floor(Math.random() * catImages.length)];
+    setCatImageSrc(chosenCat);
 
     setTimeout(() => {
       const chosen = getTrulyRandomTarot(lastDrawnIdRef.current);
@@ -341,15 +347,15 @@ export const MagicTarotModal: React.FC<TarotModalProps> = ({
 
                 {/* Mascot Advice */}
                 <div className="flex items-center gap-3 text-xs bg-[#0a0f1d] p-3 rounded-xl border border-white/5">
-                  <div className="w-8 h-8 rounded-lg overflow-hidden border border-amber-400/30 flex-shrink-0 bg-slate-900">
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg overflow-hidden border border-amber-400/40 flex-shrink-0 bg-slate-900 shadow-sm">
                     <img
-                      src="/131.png"
+                      src={catImageSrc}
                       alt="깜냥이"
                       className="w-full h-full object-cover object-center"
                       onError={(e) => {
                         const target = e.currentTarget;
-                        if (!target.src.includes('131.png')) {
-                          target.src = '/131.png';
+                        if (!target.src.includes('IMG_3235.jpeg')) {
+                          target.src = '/IMG_3235.jpeg';
                         }
                       }}
                     />

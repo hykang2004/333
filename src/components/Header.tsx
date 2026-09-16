@@ -1,5 +1,5 @@
 import React from 'react';
-import { Globe } from 'lucide-react';
+import { Globe, Home } from 'lucide-react';
 import { Language } from '../types';
 
 interface HeaderProps {
@@ -9,20 +9,22 @@ interface HeaderProps {
   onToggleSparkles?: () => void;
   currentTimeString?: string;
   onOpenShareModal?: () => void;
-  onNavigateView?: (view: 'home' | 'tarot' | 'timeline' | 'booth') => void;
-  currentView?: 'home' | 'tarot' | 'timeline' | 'booth';
+  onNavigateView?: (view: 'home' | 'tarot' | 'timeline' | 'booth' | 'goods') => void;
+  currentView?: 'home' | 'tarot' | 'timeline' | 'booth' | 'goods';
   onOpenTarot?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   language,
-  onLanguageToggle
+  onLanguageToggle,
+  currentView,
+  onNavigateView
 }) => {
   const isKo = language === 'ko';
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#0f172a]/95 backdrop-blur-md border-b border-amber-400/20 transition-all">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-start gap-2.5 sm:gap-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-2.5 sm:gap-3">
         {/* Left-aligned Eye-catching Language Switcher */}
         <button
           onClick={onLanguageToggle}
@@ -35,6 +37,18 @@ export const Header: React.FC<HeaderProps> = ({
             {isKo ? 'English' : '한국어'}
           </span>
         </button>
+
+        {/* Right-aligned Home button when inside a subpage */}
+        {currentView && currentView !== 'home' && (
+          <button
+            onClick={() => onNavigateView?.('home')}
+            id="btn-header-back-home"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-800/90 hover:bg-slate-700 text-amber-300 hover:text-amber-200 font-bold text-xs sm:text-sm border border-amber-400/30 cursor-pointer transition-all active:scale-95 shadow"
+          >
+            <Home className="w-4 h-4 text-amber-400" />
+            <span>{isKo ? '홈으로' : 'Home'}</span>
+          </button>
+        )}
       </div>
     </header>
   );

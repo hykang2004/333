@@ -36,9 +36,6 @@ export const PerformanceDetailModal: React.FC<PerformanceModalProps> = ({
           <span className="px-2.5 py-0.5 rounded-md bg-amber-400 text-slate-950 text-xs font-bold tabular-nums">
             {performance.startTime} ~ {performance.endTime}
           </span>
-          <span className="px-2.5 py-0.5 rounded-md bg-slate-900 border border-white/10 text-slate-300 text-xs font-medium">
-            {performance.category.toUpperCase()}
-          </span>
         </div>
 
         {/* Title & Host Club */}

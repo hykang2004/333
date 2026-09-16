@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, MapPin, Sparkles, Award, Utensils } from 'lucide-react';
+import { X, Sparkles, Award, Utensils } from 'lucide-react';
 import { BoothItem, Language } from '../types';
 
 interface BoothModalProps {
@@ -16,7 +16,9 @@ export const BoothDetailModal: React.FC<BoothModalProps> = ({
   if (!booth) return null;
 
   const isKo = language === 'ko';
-  const isAZone = booth.boothNumber?.startsWith('A-') || booth.locationZone?.includes('A-Zone');
+  const isFoodTruck = booth.category === 'food';
+  const hostClub = isKo ? (booth.clubKo || booth.clubNameKo) : (booth.clubEn || booth.clubNameEn);
+  const shouldShowHostClub = hostClub && !hostClub.includes('A-Zone') && !hostClub.includes('푸드존');
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200">
@@ -33,48 +35,28 @@ export const BoothDetailModal: React.FC<BoothModalProps> = ({
         </button>
 
         {/* Top Badges */}
-        <div className="flex items-center gap-2 mb-3">
+        <div className="flex flex-wrap items-center gap-2 mb-3">
           <span className="px-2.5 py-0.5 rounded-md bg-amber-400 text-slate-950 text-xs font-bold tabular-nums">
             {booth.boothNumber}
           </span>
-          <span className="px-2.5 py-0.5 rounded-md bg-slate-900 border border-white/10 text-slate-300 text-xs font-medium">
-            {booth.operatingHoursKo
-              ? (isKo ? booth.operatingHoursKo : (booth.operatingHoursEn || booth.operatingHoursKo))
-              : booth.timeType === 'day'
-              ? (isKo ? '낮 부스 (10:30~17:00)' : 'Day Booth')
-              : booth.timeType === 'night'
-              ? (isKo ? '밤 부스 (18:30~23:00)' : 'Night Booth')
-              : (isKo ? '상시 부스 (10:30~23:00)' : 'All-Day Booth')}
-          </span>
+          {(booth.categoryKo || booth.category) && (
+            <span className="px-2.5 py-0.5 rounded-md bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold">
+              {isKo
+                ? (booth.categoryKo || (booth.category === 'experience' ? '체험부스' : booth.category === 'game' ? '게임부스' : booth.category === 'profit' ? '수익부스' : booth.category === 'activity' ? '액티비티' : booth.category === 'promotion' ? '홍보부스' : '푸드트럭'))
+                : (booth.categoryEn || booth.category)}
+            </span>
+          )}
         </div>
 
         {/* Title & Host Club */}
-        <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-1 font-serif-magic">
+        <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight mb-2 font-serif-magic">
           {isKo ? (booth.titleKo || booth.nameKo) : (booth.titleEn || booth.nameEn)}
         </h3>
-        <p className="text-xs sm:text-sm font-medium text-amber-400 mb-4 flex items-center gap-1.5">
-          <Award className="w-3.5 h-3.5" />
-          <span>{isKo ? (booth.clubKo || booth.clubNameKo) : (booth.clubEn || booth.clubNameEn)}</span>
-        </p>
-
-        {/* Location Badge */}
-        <div className="flex items-center gap-2 text-xs text-slate-300 bg-[#090d18] p-3 rounded-xl border border-white/5 mb-4">
-          <MapPin className="w-4 h-4 text-amber-400 flex-shrink-0" />
-          <span className="font-medium text-amber-300">
-            {booth.locationZone}
-          </span>
-        </div>
-
-        {/* Description (A-Zone 푸드트럭은 하단 메뉴 및 가격 안내와 중복되므로 부스소개란 제외) */}
-        {!isAZone && (
-          <div className="space-y-1.5 mb-4">
-            <h4 className="text-xs font-semibold text-slate-400">
-              {isKo ? '부스 소개' : 'About Booth'}
-            </h4>
-            <p className="text-xs sm:text-sm text-slate-200 leading-relaxed bg-[#090d18] p-3.5 rounded-xl border border-white/5 font-light">
-              {isKo ? (booth.fullDescKo || booth.descriptionKo || booth.shortDescKo) : (booth.fullDescEn || booth.descriptionEn || booth.shortDescEn)}
-            </p>
-          </div>
+        {shouldShowHostClub && (
+          <p className="text-xs sm:text-sm font-medium text-amber-400 mb-4 flex items-center gap-1.5">
+            <Award className="w-3.5 h-3.5" />
+            <span>{hostClub}</span>
+          </p>
         )}
 
         {/* Highlights */}

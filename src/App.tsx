@@ -9,14 +9,14 @@ import { TarotView } from './components/TarotView';
 import { LiveTimelineTracker } from './components/LiveTimelineTracker';
 import { PerformanceScheduleView } from './components/PerformanceScheduleView';
 import { BoothSection } from './components/BoothSection';
-import { GuestbookLiveTalk } from './components/GuestbookLiveTalk';
 import { MascotKkamnyangi } from './components/MascotKkamnyangi';
 import { PerformanceDetailModal } from './components/PerformanceDetailModal';
 import { BoothDetailModal } from './components/BoothDetailModal';
+import { GoodsView } from './components/GoodsView';
 import { ShareModal } from './components/ShareModal';
 import { Moon, ArrowLeft } from 'lucide-react';
 
-export type AppView = 'home' | 'tarot' | 'timeline' | 'booth';
+export type AppView = 'home' | 'tarot' | 'timeline' | 'booth' | 'goods';
 
 export default function App() {
   // 1. Current View State (SPA Navigation)
@@ -89,9 +89,11 @@ export default function App() {
 
   const handleSelectBoothById = (boothId: string) => {
     const found = FESTIVAL_BOOTHS.find((b) => b.id === boothId);
-    if (found) {
+    if (found && found.category === 'food') {
       setSelectedBooth(found);
     }
+    setCurrentView('booth');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const isKo = language === 'ko';
@@ -132,10 +134,6 @@ export default function App() {
             language={language}
             onNavigate={handleNavigate}
           />
-          {/* 하단 실시간 광장 (응원 & 방명록) */}
-          <div className="max-w-xl sm:max-w-2xl mx-auto px-4 pb-12">
-            <GuestbookLiveTalk language={language} />
-          </div>
         </div>
 
         {/* =========================================================
@@ -219,7 +217,32 @@ export default function App() {
           <BoothSection
             language={language}
             booths={FESTIVAL_BOOTHS}
-            onSelectBooth={(booth) => setSelectedBooth(booth)}
+            onSelectBooth={(booth) => {
+              if (booth.category === 'food') {
+                setSelectedBooth(booth);
+              }
+            }}
+          />
+        </div>
+
+        {/* =========================================================
+            5. 축제 굿즈 화면: id="view-goods" (전용 굿즈 안내 페이지)
+           ========================================================= */}
+        <div
+          id="view-goods"
+          style={{ display: currentView === 'goods' ? 'block' : 'none' }}
+          className="w-full pt-4 sm:pt-6 pb-16 relative z-10"
+        >
+          {/* 전체 축제 굿즈 섹션 */}
+          <GoodsView
+            language={language}
+            onBackToHome={handleBackToHome}
+            onNavigateToBooth={(boothId) => {
+              handleNavigate('booth');
+              if (boothId) {
+                handleSelectBoothById(boothId);
+              }
+            }}
           />
         </div>
 

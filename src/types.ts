@@ -35,7 +35,9 @@ export interface BoothItem {
   timeRange: string;
   operatingHoursKo?: string;
   operatingHoursEn?: string;
-  category: 'experience' | 'food' | 'goods' | 'pub' | 'event';
+  category: 'food' | 'experience' | 'game' | 'profit' | 'activity' | 'promotion' | 'goods' | 'pub' | 'event';
+  categoryKo?: string;
+  categoryEn?: string;
   locationZone: string;
   locationZoneEn: string;
   boothNumber: string;
